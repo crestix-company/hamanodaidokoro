@@ -1,13 +1,15 @@
 import type { NextConfig } from 'next';
 
 const isGitHubPages = process.env.GITHUB_PAGES === 'true';
+const isCloudflarePages = process.env.CF_PAGES === '1';
+const isStaticExport = isGitHubPages || isCloudflarePages;
 const pagesBasePath = isGitHubPages ? '/hamanodaidokoro' : '';
 
 const nextConfig: NextConfig = {
-  output: isGitHubPages ? 'export' : undefined,
+  output: isStaticExport ? 'export' : undefined,
   basePath: pagesBasePath,
   assetPrefix: pagesBasePath,
-  trailingSlash: isGitHubPages,
+  trailingSlash: isStaticExport,
 };
 
 export default nextConfig;

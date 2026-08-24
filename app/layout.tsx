@@ -3,6 +3,7 @@ import './globals.css';
 
 const siteOrigin =
   process.env.NEXT_PUBLIC_SITE_ORIGIN ??
+  process.env.CF_PAGES_URL ??
   'https://hamano-daidokoro-take.s-nishita.chatgpt.site';
 const assetBasePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 
