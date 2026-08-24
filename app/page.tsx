@@ -1,5 +1,6 @@
 const reservationUrl =
   'https://www.hotpepper.jp/strJ004492642/yoyaku/hpds/?ROUTE_KBN=20';
+const assetBasePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 
 const menuItems = [
   { name: '焼きたて玉子焼き', price: '480', image: '/images/material-03.png', note: 'ふっくら、出汁香る定番' },
@@ -28,7 +29,7 @@ export default function Home() {
       </header>
 
       <section className="hero" id="top" aria-labelledby="hero-title">
-        <img className="hero-image" src="/images/hero-interior-wide.png" alt="木の温もりを感じるハマの台所 タケのカウンター席" />
+        <img className="hero-image" src={`${assetBasePath}/images/hero-interior-wide.png`} alt="木の温もりを感じるハマの台所 タケのカウンター席" />
         <div className="hero-shade" />
         <div className="hero-content">
           <p className="eyebrow">GUMYOJI · YOKOHAMA</p>
@@ -61,7 +62,7 @@ export default function Home() {
 
       <section className="concept-section">
         <div className="concept-photo photo-tall">
-          <img src="/images/material-06.png" alt="海鮮や揚げ物、玉子焼きなどハマの台所 タケの料理" />
+          <img src={`${assetBasePath}/images/material-06.png`} alt="海鮮や揚げ物、玉子焼きなどハマの台所 タケの料理" />
           <span className="photo-index">01 / FOOD</span>
         </div>
         <div className="concept-copy">
@@ -80,7 +81,7 @@ export default function Home() {
           </a>
         </div>
         <div className="concept-photo photo-small">
-          <img src="/images/material-02.png" alt="熱々の鉄板で提供する贅沢鉄板ステーキ" />
+          <img src={`${assetBasePath}/images/material-02.png`} alt="熱々の鉄板で提供する贅沢鉄板ステーキ" />
           <span className="photo-index">02 / SPECIALTY</span>
         </div>
       </section>
@@ -92,7 +93,7 @@ export default function Home() {
         </div>
 
         <article className="feature-dish">
-          <div className="feature-image"><img src="/images/steak.webp" alt="熱々の鉄板で提供する贅沢鉄板ステーキ" /></div>
+          <div className="feature-image"><img src={`${assetBasePath}/images/steak.webp`} alt="熱々の鉄板で提供する贅沢鉄板ステーキ" /></div>
           <div className="feature-copy">
             <span className="feature-number">01</span>
             <p className="feature-label">SIGNATURE</p>
@@ -105,7 +106,7 @@ export default function Home() {
         <div className="menu-grid">
           {menuItems.map((item, index) => (
             <article className="menu-card" key={item.name}>
-              <div className="menu-image"><img src={item.image} alt={item.name} /></div>
+              <div className="menu-image"><img src={`${assetBasePath}${item.image}`} alt={item.name} /></div>
               <div className="menu-card-head"><span>0{index + 2}</span><p>{item.note}</p></div>
               <h3>{item.name}</h3>
               <strong><small>税込</small> ¥{item.price}</strong>
@@ -126,7 +127,7 @@ export default function Home() {
 
       <section className="space-section" id="space">
         <div className="space-visual">
-          <img src="/images/material-07.webp" alt="店主との会話も楽しめるカウンター席" />
+          <img src={`${assetBasePath}/images/material-07.webp`} alt="店主との会話も楽しめるカウンター席" />
           <div className="space-stamp"><span>全</span><b>17</b><small>SEATS</small></div>
         </div>
         <div className="space-copy">
@@ -139,7 +140,7 @@ export default function Home() {
             <div><dt>SMOKE</dt><dd>全席禁煙</dd></div>
           </dl>
         </div>
-        <div className="table-photo"><img src="/images/material-05.png" alt="仲間との食事を楽しめるテーブル席" /></div>
+        <div className="table-photo"><img src={`${assetBasePath}/images/material-05.png`} alt="仲間との食事を楽しめるテーブル席" /></div>
       </section>
 
       <section className="instagram-section">
@@ -150,10 +151,10 @@ export default function Home() {
           <a href="https://www.instagram.com/_045dining_/" target="_blank" rel="noreferrer">@_045dining_ <span>↗</span></a>
         </div>
         <a className="insta-tile tile-one" href="https://www.instagram.com/_045dining_/" target="_blank" rel="noreferrer" aria-label="Instagramを開く">
-          <img src="/images/material-04.png" alt="" /><span>VIEW ON INSTAGRAM ↗</span>
+          <img src={`${assetBasePath}/images/material-04.png`} alt="" /><span>VIEW ON INSTAGRAM ↗</span>
         </a>
         <a className="insta-tile tile-two" href="https://www.instagram.com/_045dining_/" target="_blank" rel="noreferrer" aria-label="Instagramを開く">
-          <img src="/images/material-03.png" alt="" /><span>FOLLOW US ↗</span>
+          <img src={`${assetBasePath}/images/material-03.png`} alt="" /><span>FOLLOW US ↗</span>
         </a>
       </section>
 
@@ -174,13 +175,13 @@ export default function Home() {
           </a>
         </div>
         <div className="access-photo">
-          <img src="/images/material-01.png" alt="木の看板が目印のハマの台所 タケ外観" />
+          <img src={`${assetBasePath}/images/material-01.png`} alt="木の看板が目印のハマの台所 タケ外観" />
           <span>木の看板を目印にお越しください</span>
         </div>
       </section>
 
       <section className="reservation-section">
-        <img src="/images/hero-detail.jpg" alt="" />
+        <img src={`${assetBasePath}/images/hero-detail.jpg`} alt="" />
         <div className="reservation-shade" />
         <div className="reservation-content">
           <p className="section-kicker">RESERVATION</p>
