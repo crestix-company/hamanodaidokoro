@@ -14,7 +14,10 @@
 # next.js
 /.next/
 /.vinext/
-/out/
+# Cloudflare Pages is currently configured without a build command, so the
+# production-ready static export is checked in and deployed directly.
+!/out/
+!/out/**
 
 # misc
 .DS_Store
